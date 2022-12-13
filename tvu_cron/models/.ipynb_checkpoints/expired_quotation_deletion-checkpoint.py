@@ -3,7 +3,7 @@
 from odoo import models, fields, api
 
 class expired_quotation_deletion(models.Model): 
-    _name = "tvu.expired_quotation_deletion"
+    _name = "tvu_cron.expired_quotation_deletion"
     _description = ""
     
     def _remove_expired_quotations(self): 
