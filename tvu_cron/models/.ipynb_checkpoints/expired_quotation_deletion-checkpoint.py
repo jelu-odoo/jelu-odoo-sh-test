@@ -11,7 +11,7 @@ class ExpiredQuotationDeletion(models.Model):
         quotations = self.env['sale.order'].search([['state','=','draft']])
         # check if the sale orders field "is_expired"
         for q in quotations: 
-            q.validity_date 
+            # q.validity_date
             q.action_cancel()
             # non-empty, date value
                 

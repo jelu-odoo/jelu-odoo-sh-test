@@ -10,7 +10,7 @@
     'website': 'https://www.odoo.com', 
     'category': 'Training',
     'version': '0.1', 
-    'depends': [], 
+    'depends': ['sale', ], 
     'data': [
         'data/cron_job.xml',
     ], 
