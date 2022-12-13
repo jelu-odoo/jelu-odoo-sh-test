@@ -2,9 +2,11 @@
 
 from odoo import models, fields, api
 
-class expired_quotation_deletion(models.Model): 
-    _name = "tvu_cron.expired_quotation_deletion"
-    _description = ""
+class ExpiredQuotationDeletion(models.Model): 
+    _name = "expired_quotation_deletion"
+    _description = "test description"
+    
+    title = fields.Char()
     
     def _remove_expired_quotations(self): 
         # get sales orders that are in 'draft'
