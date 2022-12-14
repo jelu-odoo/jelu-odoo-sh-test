@@ -1,2 +1,2 @@
-from odoo import models, field, api
+from odoo import models, fields, api
 
