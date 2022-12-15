@@ -11,7 +11,7 @@
     'category': 'Training',
     'license': 'OPL-1',
     'version': '0.1', 
-    'depends': ['sale', ], 
+    'depends': ['sale', 'sale_management',], 
     'data': [
         'views/product_template_view.xml',
         

@@ -10,6 +10,11 @@
                     <field name="price_per_case"/>
                     <field name="price_per_pair"/>
                 </field>
+                
+                <xpath expr="//field[@name='list_price']" position="attributes">
+                    <attribute name="attrs">{'readonly':[('price_per_case','!=',0)], 'readonly':[('price_per_pair','!=',0)]}</attribute>
+                </xpath>
+                
             </field>
         </record>
     </data>

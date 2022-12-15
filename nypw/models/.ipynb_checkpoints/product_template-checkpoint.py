@@ -8,3 +8,10 @@ class ProductTemplate(models.Model):
     
     price_per_pair = fields.Monetary(string='Price per pair',
                                      help='Enter a price for each pair of shoes')
+    
+    @api.onchange('price_per_case', 'price_per_pair')
+    def _compute_list_price(self): 
+        for record in self:
+            self.list_price = self.price_per_case * self.price_per_pair
+                
+    
