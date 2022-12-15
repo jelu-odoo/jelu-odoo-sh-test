@@ -1,4 +1,4 @@
 from odoo import models, fields, api
 
-class SubscriptionEdit(Models.model): 
+class SubscriptionEdit(models.Model): 
     pass 
