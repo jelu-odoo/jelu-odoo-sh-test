@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <record id="seq_product_group" model="ir.sequence">
+            <field name="name">Product Group Sequence</field>
+            <field name="code">product_group.sequence</field>
+            <field name="prefix">PG</field>
+            <field name="padding">6</field>
+            <field name="number_next">900000</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>
