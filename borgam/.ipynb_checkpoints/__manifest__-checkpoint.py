@@ -14,6 +14,7 @@
     'version': '0.1', 
     'depends': ['point_of_sale', 'sale_management', 'sale'], 
     'data': [
+        'views/addon.xml',
     ], 
     'demo': [
     ], 
