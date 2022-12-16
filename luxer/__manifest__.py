@@ -14,6 +14,8 @@
     'version': '0.1', 
     'depends': ['sale_subscription', 'sale_management', 'sale'], 
     'data': [
+        'views/subscription_edit.xml',
+        
     ], 
     'demo': [
     ], 
