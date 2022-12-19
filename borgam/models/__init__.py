@@ -1,1 +1,1 @@
-from . import borgam
+from . import product_template
