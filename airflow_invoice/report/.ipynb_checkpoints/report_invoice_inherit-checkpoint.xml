@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_invoice_inherit" inherit_id="account.report_invoice_document">
+        <xpath expr="//t[@t-set='address']" position="replace">
+            <t t-set="address">
+                <strong>Billing Address:</strong>
+                <address t-field="o.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+                <div t-if="o.partner_id.vat" class="mt16">
+                    <t t-if="o.company_id.country_id.vat_label" t-esc="o.company_id.country_id.vat_label" id="inv_tax_id_label"/>
+                    <t t-else="">Tax ID</t>: <span t-field="o.partner_id.vat"/>
+                </div>
+            </t>
+        </xpath>
+        
+        <xpath expr="//div[@name='origin']" position="replace"/>
+        
+        <xpath expr="//div[@id='informations']" position="before">
+            <div t-if="o.ship_date">
+                <strong>Ship Date:</strong>
+                <p t-field="o.ship_date"/>
+            </div>
+            <div t-if="o.project_manager">
+                <strong>Project Manager:</strong>
+                <p t-field="o.project_manager.name"/>
+            </div>
+            <span t-if="o.project_name">
+                <strong>Project Name:</strong>
+                <p  t-field="o.project_name.name"/>
+            </span>
+            <span t-if="o.shipping_method">
+                <strong>Shipping Method:</strong>
+                <p t-field="o.shipping_method.name"/>
+            </span>
+            
+        </xpath>
+        <xpath expr="//th[@name='th_description']" position="replace">
+            <th name="th_description" class="text-left"><span>Customer PO</span></th>
+        </xpath>
+        
+        <xpath expr="//th[@name='th_priceunit']" position="replace"/>
+        
+        <xpath expr="//th[@name='th_taxes']" position="replace"/>
+        
+        <xpath expr="//span[@t-field='line.price_unit']/.." position="replace"/>
+       
+        <xpath expr="//span[@id='line_tax_ids']/.." position="replace"/>
+            
+        <xpath expr="//table[@class='table table-sm']/t" position="replace">
+            <t t-foreach="o.amount_by_group" t-as="amount_by_group">
+                <tr style="">
+                    <t t-if="len(o.line_ids.filtered(lambda line: line.tax_line_id)) in [0, 1] and float_compare(o.amount_untaxed, amount_by_group[2], precision_rounding=o.currency_id.rounding) == 0">
+                        <td>
+                            <span class="text-nowrap" t-if="len(amount_by_group) != 0">Sales Tax</span>
+                        </td>
+<!--                                                 <td><span class="text-nowrap" t-esc="'Sales Tax' if int(amount_by_group[1]) > 0 else 'Tax Exempt'"/></td> -->
+                        <td class="text-right o_price_total">
+                            <span class="text-nowrap" t-esc="amount_by_group[3] if int(amount_by_group[1]) > 0 else 0"/>
+                        </td>
+                    </t>
+                </tr>
+            </t>
+            
+            
+            <td>
+                <span class="text-nowrap" t-if="len(o.amount_by_group) == 0">Tax Exempt</span>
+            </td>
+            
+            
+        </xpath>
+    </template>
+</odoo>
