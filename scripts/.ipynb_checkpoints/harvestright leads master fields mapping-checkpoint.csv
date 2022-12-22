@@ -1,0 +1,30 @@
+Lead Owner ID,user_id
+Company,partner_name
+name,contact_name
+Email,email_from
+Phone,phone
+Mobile,mobile
+Website,website
+Medium,medium_id
+Lead Status,stage_id
+Priority,priority
+Street,street
+City,city
+State,state_id
+Zip,zip
+Country,country_id
+Description,description
+Email Opt Out,x_studio_email_opt_out
+Alt. Email,x_studio_field_Rr7vV
+Product of Interest,x_studio_field_cLhx2
+Campaign,medium_id
+(Other) Marketing Source or Trade Show,
+Other,campaign_id
+Zip Code,zip
+Alt. Notes,campaign_id
+Full Name,contact_name
+Lead Source,source_id
+Rating,priority
+Campaign Source ID,
+Marketing Source,medium_id
+Notes,description
