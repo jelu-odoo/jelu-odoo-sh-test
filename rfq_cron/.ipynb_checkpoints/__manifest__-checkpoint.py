@@ -13,7 +13,11 @@ Scheduled Action for RFQ Approval""",
     'version': '0.1', 
     'depends': ['sale_management', 'purchase'], 
     'data': [
+        'data/scheduled_approval_for_rfq.xml',
+        
     ], 
     'demo': [
+        'demo/res_partner_demo.xml',
+        
     ], 
 }
